@@ -5,11 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="wwwroot\Images\android.png" />
+    <Content Remove="wwwroot\Images\aos.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="wwwroot\Images\android.png" />
+    <EmbeddedResource Include="wwwroot\Images\aos.png" />
   </ItemGroup>
 
   <ItemGroup>
