@@ -1,0 +1,23 @@
+﻿<BFUStack HorizontalAlign="Alignment.Center" Style="width:100%">
+    <div style="font-size:@ThemeProvider.Theme.FontStyle.FontSize.Large; font-weight:@ThemeProvider.Theme.FontStyle.FontWeight.Light">Supported Platform</div>
+
+    <BFUStack Horizontal="true" VerticalAlign="Alignment.Center" Style="margin-top:5px" Tokens=@(new BFUStackTokens() { ChildrenGap = new double[] { 10.0 } })>
+        <BFUImage Height="30" Style=@VisibilityPlatform(isSupportWindows) Src="/Images/windows.png" />
+        <BFUImage Height="40" Style=@VisibilityPlatform(isSupportAndroid) Src="/Images/android.png" />
+        <BFUImage Height="30" Style=@VisibilityPlatform(isSupportiOS) Src="/Images/ios.png" />
+    </BFUStack>
+</BFUStack>
+
+@code {
+    [Inject]
+    ThemeProvider ThemeProvider { get; set; }
+
+    [Parameter]
+    public bool isSupportWindows { get; set; }
+    [Parameter]
+    public bool isSupportAndroid { get; set; }
+    [Parameter]
+    public bool isSupportiOS { get; set; }
+
+    protected string VisibilityPlatform(bool platformSet) => platformSet ? string.Empty : "display:none";
+}

@@ -1,0 +1,30 @@
+﻿<BFUStack HorizontalAlign="Alignment.Center" Style="width:100%">
+    <BFUImage Height="100" Src=@ProjectIcon />
+    <div style="font-size:@ThemeProvider.Theme.FontStyle.FontSize.Mega; font-weight:@ThemeProvider.Theme.FontStyle.FontWeight.SemiBold; text-align:center">@Header</div>
+    <div style="font-size:@ThemeProvider.Theme.FontStyle.FontSize.SuperLarge; font-weight:@ThemeProvider.Theme.FontStyle.FontWeight.SemiBold; text-align:center">@Title</div>
+    <div style="font-size:@ThemeProvider.Theme.FontStyle.FontSize.XLarge; font-weight:@ThemeProvider.Theme.FontStyle.FontWeight.Light; text-align:center">@SimpleExplain</div>
+    <br />
+    
+    <BFUStack Horizontal="true" VerticalAlign="Alignment.Center">
+        <img height="30" src="/Images/github.png" />
+        <BFULink Style="text-align:center; margin-left:5px" Href="@SourceLink">View Project</BFULink>
+    </BFUStack>
+
+</BFUStack>
+
+@code
+{
+    [Inject]
+    ThemeProvider ThemeProvider { get; set; }
+
+    [Parameter]
+    public string ProjectIcon { get; set; }
+    [Parameter]
+    public string Header { get; set; }
+    [Parameter]
+    public string Title { get; set; }
+    [Parameter]
+    public string SimpleExplain { get; set; }
+    [Parameter]
+    public string SourceLink { get; set; }
+}

@@ -1,17 +1,70 @@
+@using Microsoft.AspNetCore.Components
 @inherits LayoutComponentBase
 
-<div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
+<BFUStack Horizontal="true" Style="width:100%;">
+    <BFUResponsiveLayout MinWidth="ResponsiveMode.Medium.ToMinCssValue()">
+        <BFUStackItem Grow="0" DisableShrink="true" Style="height:100%;overflow:hidden;">
+            <NavMenu />
+        </BFUStackItem>
+    </BFUResponsiveLayout>
 
-    <div class="main">
-        <div class="top-row px-4">
-            <a href="http://blazor.net" target="_blank" class="ml-md-auto">About</a>
-        </div>
 
-        <div class="content px-4">
-            @Body
-        </div>
-    </div>
-</div>
+    <BFUStackItem Grow="1" Style="overflow:hidden">
+        <BFUStack VerticalFill="true" Style="width:100%;">
+
+            @*<BFUResponsiveLayout MaxWidth="ResponsiveMode.Medium.ToMaxCssValue()">
+                <BFUStackItem Grow="0" VerticalFill="false">
+                    <BFUIconButton IconName="GlobalNavButton" OnClick=@ShowMenu />
+                </BFUStackItem>
+            </BFUResponsiveLayout>*@
+
+            <BFUStackItem Grow="1" Tokens="new BFUStackItemTokens { Padding = ((int)CurrentMode <= (int)ResponsiveMode.Medium ? 10 : 20) }" Style="overflow-y:auto;">
+                @Body
+            </BFUStackItem>
+        </BFUStack>
+
+        @*<BFUResponsiveLayout MaxWidth="ResponsiveMode.Medium.ToMaxCssValue()">
+            <BFUPanel Type=@PanelType.SmallFixedNear OnDismiss=@(() => isPanelOpen = false) IsOpen=@isPanelOpen IsLightDismiss="true">
+                <NavigationTemplate>
+                    <BFUIconButton IconName="GlobalNavButton" OnClick=@(() => isPanelOpen = false) />
+                    <BFULink Href="https://github.com/BlazorFluentUI/BlazorFluentUI" Target="_blank">View GitHub repo of BlazorFluentUI...</BFULink>
+                </NavigationTemplate>
+                <ChildContent>
+                    <NavMenu OnLinkClicked=@OnNavLinkClick />
+                </ChildContent>
+            </BFUPanel>
+        </BFUResponsiveLayout>*@
+
+    </BFUStackItem>
+
+</BFUStack>
+
+@code
+{
+    //private Rule ScrollbarRule = new Rule();
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+    }
+
+    [CascadingParameter] public ResponsiveMode CurrentMode { get; set; }
+
+    private bool isMenuCollapsed = true;
+    private bool isPanelOpen = false;
+
+    void ShowMenu()
+    {
+        isPanelOpen = true;
+    }
+
+    void HideMenu()
+    {
+        isPanelOpen = false;
+    }
+
+    void OnNavLinkClick(BFUNavLink linkBase)
+    {
+        isPanelOpen = false;
+    }
+}
