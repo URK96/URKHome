@@ -1,10 +1,4 @@
 ﻿<BFUStack Horizontal="false" VerticalFill="true" Style="overflow:hidden;">
-    @*<BFUStackItem Grow="0" VerticalFill="false" Align="Alignment.Center">
-        <div class="top-row">
-            <BFULink Href="/">BlazorFluentUI</BFULink>
-        </div>
-    </BFUStackItem>*@
-
     <BFUStackItem VerticalFill="true" Style="overflow-y:auto;">
         <BFUNav>
             <BFUNavLink Name="Index" Url="indexPage" Id="indexPage" OnClick="@OnLinkClicked" />
@@ -16,6 +10,12 @@
                 <BFUNavLink Name="SEdge-Browser" Url="sedgePage" Id="sedgePage" OnClick="@OnLinkClicked" />
                 <BFUNavLink Name="GAButtonMapper" Url="gabtmapPage" Id="gabtmapPage" OnClick="@OnLinkClicked" />
                 <BFUNavLink Name="ResinTimer" Url="resintimerPage" Id="resintimerPage" OnClick="@OnLinkClicked" />
+            </BFUNavLinkGroup>
+            <BFUNavLinkGroup Name="Project" CollapseByDefault="true">
+                <BFUNavLink Name="A.D.M.C" Url="admcPage" Id="admcPage" OnClick="@OnLinkClicked" />
+                <BFUNavLink Name="Microprocessor" Url="microprocessorPage" Id="microprocessorPage" OnClick="@OnLinkClicked" />
+                <BFUNavLink Name="ArduinoPCMonitor" Url="arduinoPCPage" Id="arduinoPCPage" OnClick="@OnLinkClicked" />
+                <BFUNavLink Name="IoTHomeHub" Url="iotHomeHubPage" Id="iotHomeHubPage" OnClick="@OnLinkClicked" />
             </BFUNavLinkGroup>
         </BFUNav>
     </BFUStackItem>

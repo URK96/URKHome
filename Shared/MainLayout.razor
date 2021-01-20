@@ -12,28 +12,27 @@
     <BFUStackItem Grow="1" Style="overflow:hidden">
         <BFUStack VerticalFill="true" Style="width:100%;">
 
-            @*<BFUResponsiveLayout MaxWidth="ResponsiveMode.Medium.ToMaxCssValue()">
+            <BFUResponsiveLayout MaxWidth="ResponsiveMode.Medium.ToMaxCssValue()">
                 <BFUStackItem Grow="0" VerticalFill="false">
                     <BFUIconButton IconName="GlobalNavButton" OnClick=@ShowMenu />
                 </BFUStackItem>
-            </BFUResponsiveLayout>*@
+            </BFUResponsiveLayout>
 
             <BFUStackItem Grow="1" Tokens="new BFUStackItemTokens { Padding = ((int)CurrentMode <= (int)ResponsiveMode.Medium ? 10 : 20) }" Style="overflow-y:auto;">
                 @Body
             </BFUStackItem>
         </BFUStack>
 
-        @*<BFUResponsiveLayout MaxWidth="ResponsiveMode.Medium.ToMaxCssValue()">
+        <BFUResponsiveLayout MaxWidth="ResponsiveMode.Medium.ToMaxCssValue()">
             <BFUPanel Type=@PanelType.SmallFixedNear OnDismiss=@(() => isPanelOpen = false) IsOpen=@isPanelOpen IsLightDismiss="true">
                 <NavigationTemplate>
                     <BFUIconButton IconName="GlobalNavButton" OnClick=@(() => isPanelOpen = false) />
-                    <BFULink Href="https://github.com/BlazorFluentUI/BlazorFluentUI" Target="_blank">View GitHub repo of BlazorFluentUI...</BFULink>
                 </NavigationTemplate>
                 <ChildContent>
                     <NavMenu OnLinkClicked=@OnNavLinkClick />
                 </ChildContent>
             </BFUPanel>
-        </BFUResponsiveLayout>*@
+        </BFUResponsiveLayout>
 
     </BFUStackItem>
 
