@@ -3,9 +3,9 @@
 @using System.Timers
 
 <BFUStack HorizontalAlign="Alignment.Center">
-    <div style="font-size:@ThemeProvider.Theme.FontStyle.FontSize.Large; font-weight:@ThemeProvider.Theme.FontStyle.FontWeight.Light">Screenshot</div>
+    <div style="font-size:@ThemeProvider.Theme.FontStyle.FontSize.Large; font-weight:@ThemeProvider.Theme.FontStyle.FontWeight.Light; margin-bottom:10px">Screenshot</div>
 
-    <div id="ScreenshotCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+    <div id="ScreenshotCarousel" class="carousel slide" data-ride="carousel" style="max-height:60%" @onmouseenter="() => { autoSlideTimer.Stop(); }" @onmouseleave="() => { autoSlideTimer.Start(); }">
         <ol class="carousel-indicators">
             @for (int i = 0; i < imageList.Count; ++i)
             {
@@ -75,7 +75,7 @@
 
         selectedIndex = (selectedIndex == (ImageCount - 1)) ? 0 : (selectedIndex + 1);
 
-        StateHasChanged();
+        //StateHasChanged();
     }
 
     public void SlidePreviousButtonClick()
@@ -84,7 +84,7 @@
 
         selectedIndex = ((selectedIndex == 0) ? ImageCount : selectedIndex) - 1;
 
-        StateHasChanged();
+        //StateHasChanged();
     }
 
     private void ResetTimer()
