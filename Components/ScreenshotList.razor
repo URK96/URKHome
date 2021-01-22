@@ -5,7 +5,7 @@
 <BFUStack HorizontalAlign="Alignment.Center">
     <div style="font-size:@ThemeProvider.Theme.FontStyle.FontSize.Large; font-weight:@ThemeProvider.Theme.FontStyle.FontWeight.Light; margin-bottom:10px">Screenshot</div>
 
-    <div id="ScreenshotCarousel" class="carousel slide" data-ride="carousel" style="max-height:60%" @onmouseenter="() => { autoSlideTimer.Stop(); }" @onmouseleave="() => { autoSlideTimer.Start(); }">
+    <div id="ScreenshotCarousel" class="carousel slide" data-ride="carousel" @onmouseenter="() => { autoSlideTimer.Stop(); }" @onmouseleave="() => { autoSlideTimer.Start(); }">
         <ol class="carousel-indicators">
             @for (int i = 0; i < imageList.Count; ++i)
             {
@@ -74,8 +74,6 @@
         ResetTimer();
 
         selectedIndex = (selectedIndex == (ImageCount - 1)) ? 0 : (selectedIndex + 1);
-
-        //StateHasChanged();
     }
 
     public void SlidePreviousButtonClick()
@@ -83,8 +81,6 @@
         ResetTimer();
 
         selectedIndex = ((selectedIndex == 0) ? ImageCount : selectedIndex) - 1;
-
-        //StateHasChanged();
     }
 
     private void ResetTimer()
