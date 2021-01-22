@@ -1,0 +1,31 @@
+﻿@page "/profilePage"
+
+<BFUStack HorizontalAlign="Alignment.Center" Style="width:100%">
+    <BFUPersona Text="URK96"
+                SecondaryText="JIN HYEOK, CHOI"
+                TertiaryText="Software Developer"
+                OptionalText=""
+                ImageUrl="/Images/profile.png"
+                Presence=@PersonaPresenceStatus.None
+                Size=@PersonaSize.Size120
+                ShowInitialsUntilImageLoads="true" />
+
+    <div style="font-size:@ThemeProvider.Theme.FontStyle.FontSize.Large; font-weight:@ThemeProvider.Theme.FontStyle.FontWeight.SemiBold; margin-top:50px">Programming Lang Stack</div>
+
+    <BFUStack Horizontal="true" Style="margin:20px" Tokens=@(new BFUStackTokens() { ChildrenGap = new double[] { 30.0 } })>
+        <TooltipImage Tooltip="C" Image="/Images/ProfileIcons/c.svg" ImageWidth="@LANG_ICON_WIDTH" />
+        <TooltipImage Tooltip="C++" Image="/Images/ProfileIcons/cpp.svg" ImageWidth="@LANG_ICON_WIDTH" />
+        <TooltipImage Tooltip="C#" Image="/Images/ProfileIcons/csharp.svg" ImageWidth="@LANG_ICON_WIDTH" />
+        <TooltipImage Tooltip="JAVA" Image="/Images/ProfileIcons/java.svg" ImageWidth="@LANG_ICON_WIDTH" />
+        <TooltipImage Tooltip="Python" Image="/Images/ProfileIcons/python.svg" ImageWidth="@LANG_ICON_WIDTH" />
+    </BFUStack>
+
+</BFUStack>
+
+@code
+{
+    const int LANG_ICON_WIDTH = 50;
+
+    [Inject]
+    ThemeProvider ThemeProvider { get; set; }
+}
