@@ -13,11 +13,36 @@
     <div style="font-size:@ThemeProvider.Theme.FontStyle.FontSize.Large; font-weight:@ThemeProvider.Theme.FontStyle.FontWeight.SemiBold; margin-top:50px">Programming Lang Stack</div>
 
     <BFUStack Horizontal="true" Style="margin:20px" Tokens=@(new BFUStackTokens() { ChildrenGap = new double[] { 30.0 } })>
-        <TooltipImage Tooltip="C" Image="/Images/ProfileIcons/c.svg" ImageWidth="@LANG_ICON_WIDTH" />
-        <TooltipImage Tooltip="C++" Image="/Images/ProfileIcons/cpp.svg" ImageWidth="@LANG_ICON_WIDTH" />
-        <TooltipImage Tooltip="C#" Image="/Images/ProfileIcons/csharp.svg" ImageWidth="@LANG_ICON_WIDTH" />
-        <TooltipImage Tooltip="JAVA" Image="/Images/ProfileIcons/java.svg" ImageWidth="@LANG_ICON_WIDTH" />
-        <TooltipImage Tooltip="Python" Image="/Images/ProfileIcons/python.svg" ImageWidth="@LANG_ICON_WIDTH" />
+        <BFUTooltipHost>
+            <TooltipContent>C</TooltipContent>
+            <ChildContent>
+                <BFUImage Src=@($"/Images/ProfileIcons/c.svg") Width=@LANG_ICON_WIDTH />
+            </ChildContent>
+        </BFUTooltipHost>
+        <BFUTooltipHost>
+            <TooltipContent>C++</TooltipContent>
+            <ChildContent>
+                <BFUImage Src=@($"/Images/ProfileIcons/cpp.svg") Width=@LANG_ICON_WIDTH />
+            </ChildContent>
+        </BFUTooltipHost>
+        <BFUTooltipHost>
+            <TooltipContent>C#</TooltipContent>
+            <ChildContent>
+                <BFUImage Src=@($"/Images/ProfileIcons/csharp.svg") Width=@LANG_ICON_WIDTH />
+            </ChildContent>
+        </BFUTooltipHost>
+        <BFUTooltipHost>
+            <TooltipContent>Java</TooltipContent>
+            <ChildContent>
+                <BFUImage Src=@($"/Images/ProfileIcons/java.svg") Width=@LANG_ICON_WIDTH />
+            </ChildContent>
+        </BFUTooltipHost>
+        <BFUTooltipHost>
+            <TooltipContent>Python</TooltipContent>
+            <ChildContent>
+                <BFUImage Src=@($"/Images/ProfileIcons/python.svg") Width=@LANG_ICON_WIDTH />
+            </ChildContent>
+        </BFUTooltipHost>
     </BFUStack>
 
 </BFUStack>
@@ -25,6 +50,9 @@
 @code
 {
     const int LANG_ICON_WIDTH = 50;
+
+    string[] langTooltipText = { "C", "C++", "C#", "Java", "Python" };
+    string[] langTooltipImageName = { "c", "cpp", "csharp", "java", "python" };
 
     [Inject]
     ThemeProvider ThemeProvider { get; set; }
