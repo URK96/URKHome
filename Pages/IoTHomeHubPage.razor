@@ -2,6 +2,14 @@
 
 <ApplicationBasic ProjectIcon="/Images/hub.png" Header="IoTHomeHub" Title="Home Hub for IoT" SimpleExplain="Home Hub Framework for Home IoT System" SourceLink="https://github.com/URK96/IoTHomeHub" />
 
-@code {
+<BFUStack HorizontalAlign="Alignment.Center" Style="margin-top:100px;">
+    <div style="font-size:@ThemeProvider.Theme.FontStyle.FontSize.Large; font-weight:@ThemeProvider.Theme.FontStyle.FontWeight.Light; margin-bottom:10px">Project Structure</div>
+    <img src="/Images/iothomehub_structure.png" style="width:inherit; max-width:70%; height:auto" />
+</BFUStack>
 
+
+@code 
+{
+    [Inject]
+    ThemeProvider ThemeProvider { get; set; }
 }
