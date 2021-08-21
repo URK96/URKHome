@@ -1,0 +1,14 @@
+﻿@page "/microprocessorPage"
+
+<ApplicationBasic ProjectIcon="/Images/microprocessor.png" Header="Microprocessor" Title="FPGA Project" SimpleExplain="Simple Microprocessor System" SourceLink="https://github.com/URK96/Microprocessor" />
+
+<BFUStack HorizontalAlign="Alignment.Center" Style="margin-top:100px">
+    <div style="font-size:@ThemeProvider.Theme.FontStyle.FontSize.Large; font-weight:@ThemeProvider.Theme.FontStyle.FontWeight.Light; margin-bottom:10px">Project Structure</div>
+    <img src="/Images/microprocessor_structure.png" />
+</BFUStack>
+
+@code 
+{
+    [Inject]
+    ThemeProvider ThemeProvider { get; set; }
+}
