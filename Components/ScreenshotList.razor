@@ -5,7 +5,7 @@
 <BFUStack HorizontalAlign="Alignment.Center">
     <div style="font-size:@ThemeProvider.Theme.FontStyle.FontSize.Large; font-weight:@ThemeProvider.Theme.FontStyle.FontWeight.Light; margin-bottom:10px">Screenshot</div>
 
-    <div id="ScreenshotCarousel" class="carousel slide" data-ride="carousel" @onmouseenter="() => { autoSlideTimer.Stop(); }" @onmouseleave="() => { autoSlideTimer.Start(); }">
+    <div id="ScreenshotCarousel" class="carousel slide" data-ride="carousel" @BlazorFluentUI.EventHandlers.onmouseenter="() => { autoSlideTimer.Stop(); }" @BlazorFluentUI.EventHandlers.onmouseleave="() => { autoSlideTimer.Start(); }">
         <ol class="carousel-indicators">
             @for (int i = 0; i < imageList.Count; ++i)
             {
